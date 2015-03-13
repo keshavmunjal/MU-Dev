@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteRule ^blog/read-(.*)-([0-9]+).html$ edurator/article_read.php?a=$2
+RewriteRule ^blog/index-([0-9]+).html$ edurator/article.php?page=$1
+RewriteRule ^blog/browse-(.*)-([0-9]+).html$ edurator/article.php?c=$1&page=$2
+RewriteRule ^blog/tag/([^/]+)/page-([0-9]+)(/)?$ edurator/article.php?tag=$1&page=$2
+RewriteRule ^blog/tag/([^/]+)(/)?$ edurator/article.php?tag=$1&page=1
+RewriteRule ^blog/popular-([0-9]+).html$ edurator/article.php?show=popular&page=$1
+RewriteRule ^blog/articles(\/|.html)?$ edurator/article.php
+RewriteRule ^blog/article(\/|.html)?$ edurator/article.php
+RewriteRule ^blog/pages/(.*)\.html$ edurator/page.php?name=$1

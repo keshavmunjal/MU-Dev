@@ -1,0 +1,44 @@
+RewriteEngine On
+RewriteRule ^index.html$ index.php
+RewriteRule ^browse-(.*)-videos.html$ category.php?cat=$1
+
+RewriteRule ^browse-sub-(.*)-videos.html([0-9]+)$ category.php?cat=$1&id=$2
+
+RewriteRule ^browse-(.*)-videos-([0-9]+)-(.*).html$ category.php?cat=$1&page=$2&sortby=$3
+
+RewriteRule ^browse-(.*)-videos-1-date.html([0-9]+)$ catvedio.php?tag=$1&id=$2
+
+RewriteRule ^ankit/([0-9]+)$ catvedio.php?id=$1
+
+RewriteRule ^register.html$ register.php
+RewriteRule ^contact_us.html$ contact_us.php
+RewriteRule ^edit_profile.html$ edit_profile.php
+RewriteRule ^suggest.html$ suggest.php
+RewriteRule ^upload.html$ upload.php
+RewriteRule ^upload_avatar.html$ upload_avatar.php
+RewriteRule ^suggest.html$ suggest.php
+
+RewriteRule ^favorites.html(.*)$ favorites.php$1
+RewriteRule ^login.html(.*)$ login.php$1
+RewriteRule ^newvideos.html(.*)$ newvideos.php$1
+RewriteRule ^topvideos.html(.*)$ topvideos.php$1
+RewriteRule ^profile.html(.*)$ profile.php$1
+RewriteRule ^favorites.html(.*)$ favorites.php$1
+RewriteRule ^playlist/(.*)$ myfavorites.php?u=$1
+RewriteRule ^memberlist.html(.*)$ memberlist.php$1
+
+RewriteRule ^blog/read-(.*)_([0-9]+).html$ article_read.php?a=$2
+RewriteRule ^blog/index-([0-9]+).html$ article.php?page=$1
+RewriteRule ^blog/browse-(.*)-([0-9]+).html$ article.php?c=$1&page=$2
+RewriteRule ^blog/tag/([^/]+)/page-([0-9]+)(/)?$ article.php?tag=$1&page=$2
+RewriteRule ^blog/tag/([^/]+)(/)?$ article.php?tag=$1&page=1
+RewriteRule ^blog/popular-([0-9]+).html$ article.php?show=popular&page=$1
+RewriteRule ^blog(\/|.html)?$ article.php
+RewriteRule ^blog/article(\/|.html)?$ article.php
+RewriteRule ^blog/pages/(.*)\.html$ page.php?name=$1
+
+RewriteRule ^tags/([^/]+)/$ tag.php?t=$1&page=1
+RewriteRule ^tags/([^/]+)/page-([0-9]+)(/)?$ tag.php?t=$1&page=$2
+RewriteRule ^([^/]*)-video-(.*).html$ watch.php?vid=$2
+RewriteRule ^fpembed-(.*).swf$ fpembed.php?vid=$1
+RewriteRule ^rss.xml$ rss.php [L]
